@@ -1,0 +1,14 @@
+# Render Blueprint: deploys the Flask backend. Connect your GitHub repo in Render > New > Blueprint.
+services:
+  - type: web
+    name: eeg-backend
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements-prod.txt
+    startCommand: gunicorn --chdir backend app:app --workers 1 --timeout 120
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.5
+      - key: ALLOWED_ORIGINS
+        sync: false   # set to your frontend URL, e.g. https://your-app.vercel.app

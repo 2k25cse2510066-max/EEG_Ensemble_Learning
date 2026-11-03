@@ -1,0 +1,6 @@
+,Epileptic_No_Seizure,Epileptogenic_Region,Healthy_Eyes_Closed,Healthy_Eyes_Open,Seizure
+Epileptic_No_Seizure,16,3,0,1,0
+Epileptogenic_Region,3,16,0,1,0
+Healthy_Eyes_Closed,0,0,18,2,0
+Healthy_Eyes_Open,0,0,2,18,0
+Seizure,0,1,0,0,19

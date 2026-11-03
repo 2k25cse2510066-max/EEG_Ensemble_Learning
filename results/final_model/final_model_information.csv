@@ -1,0 +1,14 @@
+Parameter,Value
+Model,Extra Trees Classifier
+Number of Trees,1000
+Criterion,entropy
+Max Depth,20
+Min Samples Split,3
+Min Samples Leaf,1
+Max Features,sqrt
+Class Weight,balanced
+Random State,42
+Training Samples,500
+Number of Features,29
+CV Accuracy,87.80% +/- 5.40%
+Holdout Accuracy,89.00%

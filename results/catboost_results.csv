@@ -1,0 +1,2 @@
+Model,Accuracy,Precision,Recall,F1_Score
+CatBoost,0.8,0.7924891774891775,0.8,0.7942586140147117

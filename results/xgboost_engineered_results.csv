@@ -1,0 +1,2 @@
+Model,Accuracy,Precision,Recall,F1_Score
+XGBoost,0.87,0.870952380952381,0.87,0.8702376485303315

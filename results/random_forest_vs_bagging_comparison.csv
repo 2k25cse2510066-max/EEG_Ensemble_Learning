@@ -1,0 +1,5 @@
+Metric,Random Forest,Bagging Classifier
+Accuracy,0.83,0.83
+Precision,0.8240367965367966,0.8253323147440794
+Recall,0.83,0.83
+F1-score,0.824881920247774,0.8262918667796717

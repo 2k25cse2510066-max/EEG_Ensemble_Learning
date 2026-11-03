@@ -1,0 +1,52 @@
+EEG FEATURE ANALYSIS SUMMARY
+==================================================
+
+Dataset shape: (500, 16)
+Number of features: 15
+Number of classes: 5
+Missing values: 0
+Duplicate rows: 0
+
+Top Extra Trees Features:
+alpha_power: 0.129881
+beta_power: 0.118630
+delta_power: 0.084011
+std: 0.071740
+theta_power: 0.071245
+rms: 0.067084
+total_power: 0.065291
+gamma_power: 0.060199
+range: 0.059598
+variance: 0.056964
+
+Top Mutual Information Features:
+beta_power: 0.757865
+alpha_power: 0.717149
+total_power: 0.631503
+theta_power: 0.583556
+rms: 0.561128
+std: 0.554549
+variance: 0.554494
+gamma_power: 0.533079
+range: 0.502465
+minimum: 0.487026
+
+Highly Correlated Feature Pairs (absolute correlation >= 0.90):
+variance <-> total_power: 0.999809
+std <-> rms: 0.996704
+std <-> range: 0.977369
+range <-> rms: 0.973464
+std <-> variance: 0.964308
+variance <-> rms: 0.964034
+std <-> total_power: 0.963872
+minimum <-> range: -0.963831
+rms <-> total_power: 0.963618
+maximum <-> range: 0.962284
+std <-> minimum: -0.952675
+minimum <-> rms: -0.951565
+std <-> maximum: 0.929628
+variance <-> range: 0.928998
+range <-> total_power: 0.927669
+variance <-> minimum: -0.924960
+minimum <-> total_power: -0.924395
+maximum <-> rms: 0.923162

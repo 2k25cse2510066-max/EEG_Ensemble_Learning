@@ -1,0 +1,16 @@
+Feature,Status
+mean,Removed
+std,Selected
+variance,Removed
+minimum,Removed
+maximum,Removed
+range,Removed
+rms,Selected
+skewness,Removed
+kurtosis,Removed
+delta_power,Selected
+theta_power,Selected
+alpha_power,Selected
+beta_power,Selected
+gamma_power,Selected
+total_power,Selected

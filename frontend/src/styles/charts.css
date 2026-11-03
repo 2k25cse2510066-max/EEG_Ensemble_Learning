@@ -1,0 +1,410 @@
+.chart-note {
+  font-size: 12.5px;
+  color: var(--text-3);
+  line-height: 1.5;
+  max-width: 78ch;
+}
+
+/* ---------- Spectral signature ---------- */
+.sig-grid {
+  display: grid;
+  grid-template-columns: minmax(120px, 1.25fr) repeat(5, minmax(0, 1fr));
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: end;
+}
+.sig-band {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text-2);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.sig-symbol {
+  display: block;
+  font-size: 18px;
+  color: var(--cyan-2);
+  line-height: 1.1;
+}
+.sig-row {
+  display: contents;
+}
+.sig-class {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  align-self: center;
+}
+.sig-cell {
+  height: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  border-radius: 6px 6px 0 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--line-strong);
+  padding: 4px 4px 0;
+}
+.sig-val {
+  font-size: 11.5px;
+  color: var(--text-2);
+  line-height: 1;
+}
+.sig-bar {
+  display: block;
+  width: 62%;
+  border-radius: 4px 4px 0 0;
+  opacity: 0.92;
+}
+
+/* ---------- Probability bars ---------- */
+.prob-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.prob-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 54px;
+  grid-template-areas: 'name value' 'track track';
+  gap: 5px 12px;
+  align-items: baseline;
+}
+.prob-name {
+  grid-area: name;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-2);
+}
+.prob-row[data-top='true'] .prob-name {
+  color: var(--text);
+  font-weight: 600;
+}
+.prob-value {
+  grid-area: value;
+  text-align: right;
+  font-size: 13.5px;
+  font-weight: 550;
+}
+.prob-track {
+  grid-area: track;
+  height: 8px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+.prob-fill {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.prob-row[data-top='false'] .prob-fill {
+  opacity: 0.55;
+}
+
+/* ---------- Accuracy bars with whiskers ---------- */
+.acc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.acc-row,
+.acc-axis {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.9fr) minmax(0, 1.5fr) 74px;
+  gap: 12px;
+  align-items: center;
+}
+.acc-name {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.3;
+}
+.acc-row[data-highlight='true'] .acc-name {
+  color: var(--text);
+  font-weight: 600;
+}
+.acc-track {
+  position: relative;
+  height: 16px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 25%
+  );
+  border-radius: 4px;
+}
+.acc-fill {
+  position: absolute;
+  inset: 3px auto 3px 0;
+  border-radius: 3px;
+  background: rgba(157, 140, 255, 0.5);
+}
+.acc-row[data-highlight='true'] .acc-fill {
+  background: var(--cyan);
+}
+.acc-whisker {
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  background: var(--text);
+  transform: translateY(-50%);
+  opacity: 0.85;
+}
+.acc-whisker::before,
+.acc-whisker::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  width: 2px;
+  height: 10px;
+  background: var(--text);
+}
+.acc-whisker::before {
+  left: 0;
+}
+.acc-whisker::after {
+  right: 0;
+}
+.acc-value {
+  text-align: right;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.acc-std {
+  color: var(--text-3);
+  font-weight: 450;
+}
+.acc-axis {
+  margin-top: 6px;
+  font-size: 11.5px;
+  color: var(--text-3);
+}
+.acc-ticks {
+  position: relative;
+  height: 14px;
+}
+.acc-ticks span {
+  position: absolute;
+  transform: translateX(-50%);
+}
+.acc .chart-note {
+  margin-top: 8px;
+}
+
+/* ---------- Ranked bars ---------- */
+.rank-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.rank-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.8fr) minmax(0, 1.6fr) 48px;
+  gap: 12px;
+  align-items: center;
+}
+.rank-name {
+  font-size: 12.5px;
+  color: var(--text-2);
+  overflow-wrap: anywhere;
+}
+.rank-track {
+  height: 10px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+.rank-fill {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+}
+.rank-cyan {
+  background: var(--cyan);
+}
+.rank-violet {
+  background: var(--violet);
+}
+.rank-value {
+  text-align: right;
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+.legend {
+  display: flex;
+  gap: 18px;
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.legend-swatch.cyan {
+  background: var(--cyan);
+}
+.legend-swatch.violet {
+  background: var(--violet);
+}
+
+/* ---------- Confusion matrix ---------- */
+.cm-wrap {
+  overflow-x: auto;
+}
+.cm {
+  min-width: 520px;
+  font-size: 13px;
+  border-collapse: separate;
+  border-spacing: 4px;
+}
+.cm th {
+  font-weight: 500;
+  color: var(--text-2);
+  font-size: 12.5px;
+}
+.cm thead th {
+  text-align: center;
+  padding: 4px 4px 8px;
+  vertical-align: bottom;
+}
+.cm tbody th {
+  text-align: left;
+  padding-right: 10px;
+  white-space: nowrap;
+  color: var(--text);
+}
+.cm-corner {
+  text-align: left !important;
+  font-size: 11.5px;
+}
+.cm-corner span {
+  display: block;
+  color: var(--text-3);
+}
+.cm td {
+  text-align: center;
+  height: 54px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+.cm td[data-diagonal='true'] {
+  border-color: var(--cyan-line);
+}
+.cm-count {
+  display: block;
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.15;
+}
+.cm-rate {
+  display: block;
+  font-size: 11.5px;
+  color: var(--text-2);
+}
+
+/* ---------- Mini bars in tables ---------- */
+.mini-bar {
+  display: inline-block;
+  vertical-align: middle;
+  width: 56px;
+  height: 6px;
+  margin-right: 10px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+}
+.mini-bar span {
+  display: block;
+  height: 100%;
+  background: var(--violet);
+  border-radius: 99px;
+}
+
+@media (max-width: 560px) {
+  .acc-row,
+  .acc-axis {
+    grid-template-columns: minmax(0, 1fr) 70px;
+    grid-template-areas: 'name value' 'track track';
+    row-gap: 4px;
+  }
+  .acc-axis {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: none;
+  }
+  .acc-axis > span:first-child,
+  .acc-axis > span:last-child {
+    display: none;
+  }
+  .acc-name {
+    grid-area: name;
+  }
+  .acc-track {
+    grid-area: track;
+  }
+  .acc-value {
+    grid-area: value;
+  }
+  .rank-row {
+    grid-template-columns: minmax(0, 1fr) 44px;
+    grid-template-areas: 'name value' 'track track';
+    row-gap: 3px;
+  }
+  .rank-name {
+    grid-area: name;
+  }
+  .rank-track {
+    grid-area: track;
+  }
+  .rank-value {
+    grid-area: value;
+  }
+  .sig-grid {
+    grid-template-columns: minmax(84px, 1.1fr) repeat(5, minmax(0, 1fr));
+    column-gap: 5px;
+  }
+  .sig-class {
+    font-size: 12px;
+    gap: 5px;
+  }
+  .sig-band {
+    font-size: 0;
+  }
+  .sig-symbol {
+    font-size: 17px;
+  }
+  .sig-val {
+    font-size: 10px;
+  }
+}
+
+/* Contains the visually hidden data table so its intrinsic width cannot cause page overflow */
+.signature {
+  position: relative;
+  overflow: hidden;
+}

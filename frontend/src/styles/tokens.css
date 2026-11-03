@@ -1,0 +1,53 @@
+:root {
+  color-scheme: dark;
+
+  /* Surfaces: near-black blue, with translucent glass panels on top */
+  --bg: #07090f;
+  --bg-2: #0b0f19;
+  --surface: rgba(20, 25, 39, 0.72);
+  --surface-2: rgba(30, 37, 58, 0.78);
+  --surface-3: rgba(40, 49, 76, 0.85);
+  --line: rgba(150, 168, 215, 0.16);
+  --line-strong: rgba(170, 188, 235, 0.32);
+
+  /* Text */
+  --text: #f3f6fc;
+  --text-2: #b6bfd4;
+  --text-3: #8991ab;
+
+  /* Accents: cyan for signal, violet for selection */
+  --cyan: #46dcef;
+  --cyan-2: #92eef9;
+  --cyan-soft: rgba(70, 220, 239, 0.1);
+  --cyan-line: rgba(70, 220, 239, 0.42);
+  --violet: #7d6ef7;
+  --violet-2: #b4a9ff;
+  --violet-soft: rgba(125, 110, 247, 0.16);
+  --violet-line: rgba(125, 110, 247, 0.5);
+
+  /* Status */
+  --ok: #4fe0a6;
+  --warn: #f0b955;
+  --danger: #ff6b78;
+  --ok-soft: rgba(79, 224, 166, 0.12);
+  --warn-soft: rgba(240, 185, 85, 0.12);
+  --danger-soft: rgba(255, 107, 120, 0.13);
+
+  /* Class colours: healthy = cyan/teal, epileptic = violet/magenta, seizure = red */
+  --c-Healthy_Eyes_Open: #52c7f0;
+  --c-Healthy_Eyes_Closed: #3fe0c4;
+  --c-Epileptic_No_Seizure: #a08cff;
+  --c-Epileptogenic_Region: #dd7cf5;
+  --c-Seizure: #ff5468;
+
+  --font-sans: 'Poppins', 'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 20px;
+
+  --topbar-h: 68px;
+  --content-max: 1560px;
+  --focus: 0 0 0 2px var(--bg), 0 0 0 4px var(--cyan);
+}

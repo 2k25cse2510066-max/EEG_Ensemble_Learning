@@ -1,0 +1,5 @@
+Metric,Value
+Mean Accuracy,82.19999999999999
+Standard Deviation,5.015974481593781
+Minimum Fold Accuracy,72.0
+Maximum Fold Accuracy,90.0
